@@ -1,0 +1,145 @@
+﻿<Window x:Class="CalculatorApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalculatorApp.Views"
+        mc:Ignorable="d"
+        Title="Calculator" 
+        Height="600" Width="450">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Screen -->
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+
+            <!-- Calculation -->
+            <TextBlock Grid.Row="0" 
+                       Text="{Binding Expression}" />
+
+            <!-- Result -->
+            <TextBlock Grid.Row="1"
+                       Text="{Binding Entry}" />
+        </Grid>
+
+        <!-- Buttons -->
+        <Button x:Name="btn0"
+                Grid.Row="1" Grid.Column="0"
+                Content="%"
+                Command="{Binding PercentageCommand}" />
+        <Button x:Name="btn1"
+                Grid.Row="1" Grid.Column="1"
+                Content="CE"
+                Command="{Binding ClearEntryCommand}" />
+        <Button x:Name="btn2"
+                Grid.Row="1" Grid.Column="2"
+                Content="C" 
+                Command="{Binding ClearCommand}" />
+        <Button x:Name="btn3"
+                Grid.Row="1" Grid.Column="3"
+                Content="BACKSPACE"
+                Command="{Binding BackspaceCommand}" />
+
+        <Button x:Name="btn4"
+                Grid.Row="2" Grid.Column="0"
+                Content="7"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn4}" />
+        <Button x:Name="btn5"
+                Grid.Row="2" Grid.Column="1"
+                Content="8"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn5}" />
+        <Button x:Name="btn6"
+                Grid.Row="2" Grid.Column="2"
+                Content="9"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn6}" />
+        <Button x:Name="btn7"
+                Grid.Row="2" Grid.Column="3"
+                Content="/"
+                Command="{Binding DivideCommand}" />
+
+        <Button x:Name="btn8"
+                Grid.Row="3" Grid.Column="0"
+                Content="4" 
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn8}" />
+        <Button x:Name="btn9"
+                Grid.Row="3" Grid.Column="1"
+                Content="5"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn9}" />
+        <Button x:Name="btn10"
+                Grid.Row="3" Grid.Column="2"
+                Content="6"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn10}" />
+        <Button x:Name="btn11"
+                Grid.Row="3" Grid.Column="3"
+                Content="X"
+                Command="{Binding MultiplyCommand}" />
+
+        <Button x:Name="btn12"
+                Grid.Row="4" Grid.Column="0"
+                Content="1"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn12}" />
+        <Button x:Name="btn13"
+                Grid.Row="4" Grid.Column="1"
+                Content="2"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn13}" />
+        <Button x:Name="btn14"
+                Grid.Row="4" Grid.Column="2"
+                Content="3"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn14}" />
+        <Button x:Name="btn15"
+                Grid.Row="4" Grid.Column="3"
+                Content="-"
+                Command="{Binding SubtractCommand}" />
+
+        <Button x:Name="btn16"
+                Grid.Row="5" Grid.Column="0"
+                Content="0"
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn16}" />
+        <Button x:Name="btn17"
+                Grid.Row="5" Grid.Column="1"
+                Content="."
+                Command="{Binding SymbolInputCommand}"
+                CommandParameter="{Binding ElementName=btn17}" />
+        <Button x:Name="btn18"
+                Grid.Row="5" Grid.Column="2"
+                Content="="
+                Command="{Binding EqualCommand}" />
+        <Button x:Name="btn19"
+                Grid.Row="5" Grid.Column="3"
+                Content="+"
+                Command="{Binding AddCommand}" />
+    </Grid>
+</Window>
